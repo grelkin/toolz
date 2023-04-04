@@ -49,3 +49,7 @@ end
 ```
 
 This initializes completions and creates an alias `alias t="toolz run"`.
+
+---
+
+Made with [Bashly](https://bashly.dannyb.co/) and [VHS](https://github.com/charmbracelet/vhs).
