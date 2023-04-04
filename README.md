@@ -12,13 +12,21 @@ Features:
 
 ## Usage
 
+![Usage](https://github.com/grelkin/toolz/blob/master/assets/toolz-1.gif?raw=true)
+
 ### Quick Start
 
 #### Create a new library `my-lib`
 
+![Create a new library](https://github.com/grelkin/toolz/blob/master/assets/toolz-2.gif?raw=true)
+
 #### Create and execute a new command `my-cmd`
 
+![Create and execute a new command](https://github.com/grelkin/toolz/blob/master/assets/toolz-3.gif?raw=true)
+
 #### Remove everything
+
+![Remove everything](https://github.com/grelkin/toolz/blob/master/assets/toolz-4.gif?raw=true)
 
 ## Installation
 
