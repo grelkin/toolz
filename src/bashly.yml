@@ -1,0 +1,98 @@
+name: toolz
+help: Shell Script Manager
+version: 0.1.0
+
+environment_variables:
+- name: TOOLZ_DIR
+  help: Directory with your commands and libraries
+  required: true
+  default: $HOME/.toolz
+- name: TOOLZ_PREFIX
+  help: Prefix for your commands
+  required: true
+  default: toolz-
+- name: TOOLZ_SUFFIX
+  help: Suffix for your commands and libraries
+  required: true
+  default: .sh
+
+commands:
+- name: run
+  alias: r
+  help: Runs toolz command
+  default: true
+  private: false
+  catch_all: true
+  examples:
+    - \$ toolz cmd arg --opt
+    - \$ toolz run cmd arg --opt
+    - \$ toolz r cmd arg --opt
+
+- name: list
+  alias: ['ls', 'l']
+  help: Lists all toolz commands and/or libraries
+  flags:
+  - long: --commands
+    short: -c
+    help: List commands only
+  - long: --libraries
+    short: -l
+    help: List libraries only
+  examples:
+    - \$ toolz ls
+    - \$ toolz ls -c
+    - \$ toolz ls -l
+
+- name: edit
+  alias: e
+  help: Opens command or library in \$EDITOR, creates new if it doesn't exist
+  args:
+  - name: name
+    required: true
+    help: Name of the command or library
+  flags:
+  - long: --library
+    short: -l
+    help: Edit library instead of a command
+  examples:
+    - \$ toolz edit cmd
+    - \$ toolz edit -l lib
+
+- name: remove
+  alias: rm
+  help: Removes command or library
+  args:
+  - name: name
+    required: true
+    help: Name of the command or library
+  flags:
+  - long: --library
+    short: -l
+    help: Remove library instead of a command
+  examples:
+    - \$ toolz remove cmd
+    - \$ toolz remove -l lib
+
+- name: cd
+  help: Spawns a shell in your \$TOOLZ_DIR directory
+
+- name: src
+  help: Displays path to the library
+  args:
+  - name: library
+    required: true
+    help: Name of the library
+  examples: |-
+    \$ source "\$(toolz src my-lib)"
+
+- name: init
+  help: Configures the shell environment
+  args:
+  - name: shell
+    required: true
+    allowed:
+      - fish
+    help: Name of the shell
+  examples: |-
+    \$ toolz init fish | source
+
