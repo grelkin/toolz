@@ -7,6 +7,6 @@ elif is not equal "${other_args[0]}" "()"; then
   red_bold "Command '${other_args[0]}' not found"
   return 1
 else
-  # do nothing
-  return 0
+  # display list of commands
+  cmd_list
 fi
