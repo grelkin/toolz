@@ -5,15 +5,12 @@ version: 0.1.0
 environment_variables:
 - name: TOOLZ_DIR
   help: Directory with your commands and libraries
-  required: true
   default: $HOME/.toolz
 - name: TOOLZ_PREFIX
   help: Prefix for your commands
-  required: true
   default: toolz-
 - name: TOOLZ_SUFFIX
   help: Suffix for your commands and libraries
-  required: true
   default: .sh
 
 commands:
